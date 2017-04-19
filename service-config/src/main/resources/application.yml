@@ -1,0 +1,31 @@
+server:
+  port: 4100
+
+spring:
+  application:
+    name: jadyer-config-server
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672                                                 # 注意端口是5672，不是15672
+    username: xuanyu
+    password: xuanyu
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/v5java/demo-cloud-08-config  # 配置git仓库的地址
+          searchPaths: config-repo                            # git仓库下的相对地址（多个则用半角逗号分隔）
+          # username: username                                  # 只有private的项目才需配置用户名和密码
+          # password: password                                  # 只有private的项目才需配置用户名和密码
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 15
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://127.0.0.1:1100/eureka/
