@@ -1,14 +1,14 @@
 spring:
   application:
-    name: demo.cloud.config         # 指定配置中心配置文件的{application}
+    name: demo.cloud.config
   cloud:
     config:
-      #uri: http://127.0.0.1:4100/  # 指定配置中心的地址
-      profile: prod                # 指定配置中心配置文件的{profile}
-      label: master                # 指定配置中心配置文件的{label}
+      #uri: http://127.0.0.1:4100/
+      profile: prod
+      label: master
       discovery:
-        enabled: true                    # 使用注册中心里面已注册的配置中心
-        serviceId: jadyer-config-server  # 指定配置中心注册到注册中心的serviceId
+        enabled: true
+        serviceId: jadyer-config-server
 
 eureka:
   client:
