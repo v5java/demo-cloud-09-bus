@@ -1,6 +1,7 @@
 server:
   port: 4100
 
+# 关于配置仓库里面文件内容的加密，可以考虑引入http://cloud.spring.io/spring-cloud-vault/
 spring:
   application:
     name: jadyer-config-server
